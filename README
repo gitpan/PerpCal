@@ -1,0 +1,27 @@
+DESCRIPTION
+
+This is another implementation of a perpetual calendar. However, dates
+prior to September 3, 1752 (the Gregorian Reformation) were not taken
+into consideration, thus, the day of week for them would be incorrectly
+reported.
+
+A return value of 0 means that the day of week is "Sunday". A return
+value of 1 is "Monday", 2 is "Tuesday", 3 is "Wednesday", 4 is
+"Thursday", 5 is "Friday", and 6 is "Saturday".
+
+See the example directory for usage.
+
+REFERENCE
+
+"A Mental Calendar" by Michael Keith, Journal of Recreational
+Mathematics, 1975-1976.
+
+LICENSE
+
+This program is free software; you can redistribute it or modify it
+under the terms of the GNU General Public License. 
+
+AUTHOR
+
+Julius C. Duque <jcduque (AT) lycos (DOT) com>
+

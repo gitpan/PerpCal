@@ -1,0 +1,32 @@
+#!/usr/local/bin/perl
+
+use diagnostics;
+use strict;
+use warnings;
+use PerpCal;
+use Getopt::Long;
+
+my ($year, $month, $numdate);
+GetOptions("year=i" => \$year, "month=i" => \$month,
+    "date=i" => \$numdate);
+
+sub usage
+{
+    print "USAGE: $0 --year=YYYY --month=MM --date=DD\n";
+    print "example: $0 --year=1972 --month=2 --date=7";
+    print "    (should be Monday)\n";
+    exit 0;
+}
+
+&usage if (!defined($year) or !defined($month) or !defined($numdate));
+
+my $result = dow($year, $month, $numdate);
+
+print "Sunday\n" if ($result == 0);
+print "Monday\n" if ($result == 1);
+print "Tuesday\n" if ($result == 2);
+print "Wednesday\n" if ($result == 3);
+print "Thursday\n" if ($result == 4);
+print "Friday\n" if ($result == 5);
+print "Saturday\n" if ($result == 6);
+
